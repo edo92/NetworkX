@@ -4,11 +4,13 @@ import winUtil from '../util/win';
 class NetworkInterface {
     public changeInterfaceName = (find: string, name: string) => {
         const cmd = `netsh interface set interface name = "${find}" newname = "${name}"`;
-        winUtil.execCommand(cmd, null);
+        return winUtil.execCommand(cmd, null);
     }
 
-    public listInterfaces = () => {
-        return os.networkInterfaces();
+    public listInterfaces = (callback?:any) => {
+        const list = os.networkInterfaces();
+        if(callback) callback(list);
+        return list;
     }
 
     public trackNetwork = () => {

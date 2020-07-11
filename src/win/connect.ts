@@ -15,7 +15,7 @@ class WinConnect extends NetworkInterface {
             throw 'Password is missing';
         }
 
-        this.scanNetwork((networks: (string | number)[]): void => {
+        return this.scanNetwork((networks: (string | number)[]): void => {
             let targetNet = networks.find((target: any) => {
                 return target.ssid === cridential.ssid;
             })

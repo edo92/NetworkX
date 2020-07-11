@@ -1,5 +1,7 @@
 import WindowsInterface from './win';
 
 let imp = new WindowsInterface();
-console.log(imp.scanNetwork(() => {
-}));
+
+console.log(imp.changeInterfaceName('test-iface', 'Wi-Fi'));
+// console.log(imp.changeInterfaceName('test-iface', 'Wi-Fi'));
+console.log(imp.listInterfaces());
