@@ -12,6 +12,8 @@
   },
   "scripts": {
     "dev": "nodemon -e ts -w ./src -x ts-node src/index.ts",
+    "setup": "npm install && npm run setup:libs",
+    "setup:libs": "cd src && cd libs && npm install",
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
@@ -37,8 +39,8 @@
     "husky": "^4.2.5",
     "tsdx": "^0.13.2",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.5",
     "nodemon": "^2.0.4",
+    "typescript": "^3.9.6",
     "ts-node": "^8.10.2",
     "dotenv": "^8.2.0"
   },

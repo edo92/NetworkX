@@ -30,7 +30,7 @@ class WinConnect extends NetworkInterface {
                 winUtil.Win32Profile(targetNet, cridential.password)
             )
 
-            // Connect command with netsh
+            // Netsh command to connect to wifi
             winUtil.execCommand('netsh', [
                 'wlan',
                 'add',

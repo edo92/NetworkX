@@ -1,7 +1,7 @@
 {
   "include": [
     "src",
-    "types"
+    "types", "libs"
   ],
   "compilerOptions": {
     "module": "commonjs",
