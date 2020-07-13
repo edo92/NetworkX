@@ -3,12 +3,13 @@ import cp from 'child_process';
 import * as networkUtils from '../util/networks';
 import WinConnect from './connect';
 import env from '../util/env';
-const scapy = require('../libs/scapy');
+import scapy from '../libs/scapy';
 
 class WinScan extends WinConnect {
-    public scanLocalIps = () => {
+    public scanLocalDevices = (callback: any) => {
+        // Use scay to get local devices
         scapy.airping((res: any) => {
-            console.log('test----', res)
+            callback(res);
         })
     }
 
