@@ -1,10 +1,13 @@
 import LinuxScan from './scan';
 
 class LinuxInterface extends LinuxScan {
-    public iface: string = '';
+    constructor(){
+        super()
+        this.iface = ''
+    }
 
-    public init = (iface: string) => {
-        this.iface = iface;
+    public init = (config:any) => {
+        this.iface = config.iface;
     }
 };
 

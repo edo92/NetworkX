@@ -2,7 +2,7 @@ import cp from 'child_process';
 import env from './env';
 
 class WinHelpers {
-    public static execCommand = (cmd: string, params: string[] | null): void => {
+    public static execCommand = (cmd: string, params: string[] | null, callback?: any): void => {
         new Promise((resolve, reject): void => {
             cp.execFile(cmd, params || null, { env, shell: true }, (err: any, stdout: any, stderr: any): void => {
                 // Command output to error
@@ -12,7 +12,7 @@ class WinHelpers {
 
                     reject(err);
                 } else {
-                    resolve(stdout);
+                    callback(resolve(stdout));
                 }
             })
         })

@@ -13,6 +13,7 @@ class NetworkInterface {
         return list;
     }
 
+    // Need attenction
     public trackNetwork = () => {
         const cmd = 'runas runas /user:Administrator "NETSH TRACE START CAPTURE=YES TRACEFILE=C:\Users\edote\OneDrive\Desktop\workdir\NetworkX"'
         winUtil.execCommand(cmd, null);

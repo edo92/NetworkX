@@ -1,12 +1,14 @@
-import WindowsInterface from './win';
+// import WindowsInterface from './win';
 
-let imp = new WindowsInterface();
+// let imp = new WindowsInterface();
+// // console.log(imp.changeInterfaceName('test-iface', 'Wi-Fi'));
 
-// console.log(imp.changeInterfaceName('test-iface', 'Wi-Fi'));
-// console.log(imp.changeInterfaceName('test-iface', 'Wi-Fi'));
 
-imp.scanLocalDevices((data: any) => {
-    console.log('----', data)
-})
 
-// console.log('imp', imp.listInterfaces())
+import LinuxInterface from './linux';
+
+let imp = new LinuxInterface();
+
+console.log('imppp', imp.scanNetwork((res: any) => {
+    console.log('response', res)
+}))
