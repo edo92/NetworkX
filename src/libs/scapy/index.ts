@@ -2,22 +2,26 @@ import pythonShell from './shell';
 
 class NodeScapy {
     airping = (callback?: any) => {
+        // Execute airping command in python script
         pythonShell({ args: ['airping'] }, (results: string[]) => {
-            // Filter non data in results
-            let test = results.filter((d: any, i: any) => {
+            if (callback) callback(parse(results));
+            return parse(results);
+        })
+
+        function parse(data: string[]) {
+            // Filter data string
+            let filtered = data.filter((d: any, i: any) => {
                 if (i >= 4) return d;
             })
 
             // Format data object
-            test.map((res: any) => {
+            let formated = filtered.map((res: any) => {
                 let data = res.trim().split(' ');
                 return { ip: data[1], mac: data[0] };
             })
 
-            if (callback) callback(test);
-
-            return test;
-        })
+            return formated;
+        }
     }
 
     scan = () => {
@@ -29,4 +33,4 @@ class NodeScapy {
     }
 }
 
-module.exports = new NodeScapy;
+export default new NodeScapy;

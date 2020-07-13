@@ -1,4 +1,8 @@
 {
+    "scripts": {
+        "setup:env:win":"py -m pip install --user virtualenv && py -m venv env .\"env\"Scripts\"activate",
+        "setup":"pip install -r requirements.txt"
+    },
     "dependencies": {
         "python-shell": "^2.0.1"
     }
