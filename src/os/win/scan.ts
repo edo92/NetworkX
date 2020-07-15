@@ -1,18 +1,9 @@
 import cp from 'child_process';
-
-import * as networkUtils from '../util/networks';
+import * as networkUtils from '../../util/networks';
 import WinConnect from './connect';
-import env from '../util/env';
-import scapy from '../libs/scapy';
+import env from '../../util/env';
 
 class WinScan extends WinConnect {
-    public scanLocalDevices = (callback: any) => {
-        // Use scay to get local devices
-        scapy.airping((res: any) => {
-            callback(res);
-        })
-    }
-
     public scanNetwork = (callback: IScanedList) => {
         cp.execFile(
             'netsh',

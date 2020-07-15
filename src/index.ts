@@ -1,12 +1,16 @@
-import WindowsInterface from './win';
+import WindowsInterface from './os/win';
 
 let imp = new WindowsInterface();
+// console.log(imp.discoverDevices((res: any) => {
+//     console.log('response', res)
+// }));
+console.log(imp.deauth())
 
-// console.log(imp.changeInterfaceName('test-iface', 'Wi-Fi'));
-// console.log(imp.changeInterfaceName('test-iface', 'Wi-Fi'));
 
-imp.scanLocalDevices((data: any) => {
-    console.log('----', data)
-})
+// import LinuxInterface from './linux';
 
-// console.log('imp', imp.listInterfaces())
+// let imp = new LinuxInterface();
+
+// console.log('imppp', imp.scanNetwork((res: any) => {
+//     console.log('response', res)
+// }))
