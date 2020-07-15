@@ -1,5 +1,5 @@
-import * as net from '../util/networks';
-import winUtil from '../util/win';
+import * as net from '../../util/networks';
+import winUtil from '../../util/win';
 
 class UnixScan {
     public iface: any;

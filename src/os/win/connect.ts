@@ -1,7 +1,6 @@
 import fs from 'fs';
-
+import winUtil from '../../util/win';
 import NetworkInterface from './netsh';
-import winUtil from '../util/win';
 
 class WinConnect extends NetworkInterface {
     public scanNetwork: any;
